@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنل زبان‌آموز · آکادمی زبان‌لرن</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="index.html" class="logo"><span class="mark">زل</span> آکادمی زبان‌لرن</a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="teachers.html">مدرسان</a>
+      <a href="articles.html">مقالات</a>
+      <a href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="dashboard-student.html" class="avatar sm">زآ</a>
+      <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="btn btn-ghost" style="align-self:flex-end;font-size:22px" onclick="toggleMobileMenu()">✕</button>
+  <a href="index.html">خانه</a>
+  <a href="teachers.html">مدرسان</a>
+  <a href="dashboard-student.html">پنل من</a>
+  <a href="login.html">خروج</a>
+</div>
+
+<div class="container section-tight dash">
+  <aside class="dash-side">
+    <div class="who"><div class="avatar md">زآ</div><div><b style="font-size:14px">زهرا آقایی</b><div style="font-size:12px;color:var(--ink-faint)">زبان‌آموز</div></div></div>
+    <a href="#" class="active">🏠 داشبورد</a>
+    <a href="teachers.html">🔍 پیدا کردن مدرس</a>
+    <a href="#">📅 کلاس‌های من</a>
+    <a href="#">💳 تراکنش‌ها</a>
+    <a href="#">⚙️ تنظیمات حساب</a>
+    <a href="login.html" style="color:var(--danger)">🚪 خروج</a>
+  </aside>
+
+  <main>
+    <h1 style="font-size:22px;margin-bottom:4px">سلام زهرا 👋</h1>
+    <p style="color:var(--ink-soft);margin-bottom:24px">این خلاصه‌ای از وضعیت کلاس‌های شماست.</p>
+
+    <div class="grid grid-3" style="margin-bottom:28px">
+      <div class="stat-card"><div class="label">کلاس‌های برگزار شده</div><div class="value">۱۲</div><div class="delta">+۲ نسبت به ماه قبل</div></div>
+      <div class="stat-card"><div class="label">کلاس بعدی</div><div class="value">۲ روز دیگر</div><div class="delta" style="color:var(--ink-faint)">آناهیتا رستگار · ۱۸:۰۰</div></div>
+      <div class="stat-card"><div class="label">مجموع پرداختی</div><div class="value">۴,۳۲۰,۰۰۰</div><div class="delta" style="color:var(--ink-faint)">تومان از ابتدای ثبت‌نام</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:28px">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin:0;font-size:16px">کلاس‌های من</h3>
+        <a href="teachers.html" class="btn btn-sm btn-primary">رزرو کلاس جدید</a>
+      </div>
+      <div class="table-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>مدرس</th><th>تاریخ</th><th>ساعت</th><th>نوع</th><th>وضعیت</th></tr></thead>
+          <tbody id="bkStudentBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card card-pad">
+      <h3 style="margin-top:0;font-size:16px">پیشرفت یادگیری</h3>
+      <p style="color:var(--ink-soft);font-size:13.5px">زبان آلمانی — سطح A2</p>
+      <div style="height:10px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:6px">
+        <div style="width:64%;height:100%;background:var(--primary)"></div>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-faint);margin:0">۶۴٪ تا تکمیل سطح فعلی</p>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

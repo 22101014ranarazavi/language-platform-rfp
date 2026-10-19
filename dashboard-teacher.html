@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنل مدرس · آکادمی زبان‌لرن</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="index.html" class="logo"><span class="mark">زل</span> آکادمی زبان‌لرن</a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="teachers.html">مدرسان</a>
+      <a href="articles.html">مقالات</a>
+      <a href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="dashboard-teacher.html" class="avatar sm">آر</a>
+      <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="btn btn-ghost" style="align-self:flex-end;font-size:22px" onclick="toggleMobileMenu()">✕</button>
+  <a href="index.html">خانه</a>
+  <a href="dashboard-teacher.html">پنل مدرس</a>
+  <a href="login.html">خروج</a>
+</div>
+
+<div class="container section-tight dash">
+  <aside class="dash-side">
+    <div class="who"><div class="avatar md">آر</div><div><b style="font-size:14px">آناهیتا رستگار</b><div style="font-size:12px;color:var(--ink-faint)">مدرس زبان آلمانی</div></div></div>
+    <a href="#" class="active">🏠 داشبورد</a>
+    <a href="#">📅 برنامه هفتگی</a>
+    <a href="#">👥 درخواست‌های رزرو</a>
+    <a href="#">💰 تسویه و درآمد</a>
+    <a href="#">👤 ویرایش پروفایل</a>
+    <a href="login.html" style="color:var(--danger)">🚪 خروج</a>
+  </aside>
+
+  <main>
+    <h1 style="font-size:22px;margin-bottom:4px">سلام آناهیتا 👋</h1>
+    <p style="color:var(--ink-soft);margin-bottom:24px">این خلاصه‌ای از فعالیت و درآمد شماست.</p>
+
+    <div class="grid grid-4" style="margin-bottom:28px">
+      <div class="stat-card"><div class="label">زبان‌آموزان فعال</div><div class="value">۳۸</div><div class="delta">+۳ این ماه</div></div>
+      <div class="stat-card"><div class="label">کلاس این هفته</div><div class="value">۱۱</div><div class="delta" style="color:var(--ink-faint)">۲ درخواست در انتظار تایید</div></div>
+      <div class="stat-card"><div class="label">درآمد این ماه</div><div class="value">۱۲,۴۰۰,۰۰۰</div><div class="delta">تومان</div></div>
+      <div class="stat-card"><div class="label">امتیاز</div><div class="value">۴.۹ / ۵</div><div class="delta" style="color:var(--ink-faint)">از ۳۸ نظر</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:28px">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin:0;font-size:16px">کلاس‌های من</h3>
+        <button class="btn btn-sm btn-outline" onclick="toast('زمان‌بندی هفتگی بروزرسانی شد')">ویرایش زمان‌بندی</button>
+      </div>
+      <div class="table-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>زبان‌آموز</th><th>تاریخ</th><th>ساعت</th><th>نوع</th><th>مبلغ</th><th>وضعیت</th></tr></thead>
+          <tbody id="bkTeacherBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card card-pad">
+      <h3 style="margin-top:0;font-size:16px">تسویه بعدی</h3>
+      <p style="color:var(--ink-soft);font-size:13.5px;margin-bottom:14px">سهم شما از جلسات برگزار‌شده تا پایان هفته محاسبه و به حساب شما واریز می‌شود.</p>
+      <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:8px"><span>سهم مدرس (۷۰٪)</span><b>۸,۶۸۰,۰۰۰ تومان</b></div>
+      <div style="display:flex;justify-content:space-between;font-size:14px;color:var(--ink-faint)"><span>سهم مجموعه (۳۰٪)</span><span>۳,۷۲۰,۰۰۰ تومان</span></div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

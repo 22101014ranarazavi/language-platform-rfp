@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدرسان · آکادمی زبان‌لرن</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="index.html" class="logo"><span class="mark">زل</span> آکادمی زبان‌لرن</a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="teachers.html" class="active">مدرسان</a>
+      <a href="articles.html">مقالات</a>
+      <a href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">ورود</a>
+      <a href="teachers.html" class="btn btn-primary btn-sm">شروع یادگیری</a>
+      <button class="nav-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="btn btn-ghost" style="align-self:flex-end;font-size:22px" onclick="toggleMobileMenu()">✕</button>
+  <a href="index.html">خانه</a>
+  <a href="teachers.html">مدرسان</a>
+  <a href="articles.html">مقالات</a>
+  <a href="contact.html">تماس با ما</a>
+  <a href="login.html">ورود / ثبت‌نام</a>
+</div>
+
+<div class="container section-tight">
+  <div class="breadcrumb"><a href="index.html">خانه</a> / مدرسان</div>
+  <h1 style="font-size:26px;margin-bottom:6px">مدرس خودتان را پیدا کنید</h1>
+  <p style="color:var(--ink-soft);margin-bottom:28px">از بین مدرسان تایید‌شده آلمانی و انگلیسی، بر اساس سطح، نوع کلاس و بودجه فیلتر کنید.</p>
+
+  <div class="filter-bar">
+    <div class="field">
+      <label>جست‌وجو</label>
+      <input id="fSearch" type="text" placeholder="نام مدرس یا کلیدواژه..." oninput="renderTeachers()">
+    </div>
+    <div class="field">
+      <label>زبان</label>
+      <select id="fLang" onchange="renderTeachers()">
+        <option value="all">همه زبان‌ها</option>
+        <option value="de">آلمانی</option>
+        <option value="en">انگلیسی</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>نوع کلاس</label>
+      <select id="fType" onchange="renderTeachers()">
+        <option value="all">خصوصی و گروهی</option>
+        <option value="private">خصوصی</option>
+        <option value="group">گروهی</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>مرتب‌سازی</label>
+      <select id="fSort" onchange="renderTeachers()">
+        <option value="rating">بیشترین امتیاز</option>
+        <option value="price-asc">ارزان‌ترین</option>
+        <option value="price-desc">گران‌ترین</option>
+      </select>
+    </div>
+  </div>
+
+  <p style="color:var(--ink-faint);font-size:13.5px;margin-bottom:16px"><span id="resultCount">0</span> مدرس پیدا شد</p>
+
+  <div class="grid grid-3" id="teacherGrid"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="color:#fff;margin-bottom:12px"><span class="mark">زل</span> آکادمی زبان‌لرن</div>
+      <p style="color:#B9D4CC;font-size:14px;max-width:280px">پلتفرم آموزش آنلاین زبان آلمانی و انگلیسی با مدرسان متخصص، کلاس زنده و برنامه شخصی‌سازی‌شده.</p>
+    </div>
+    <div><h4>دسترسی سریع</h4><ul>
+      <li><a href="teachers.html">مدرسان</a></li>
+      <li><a href="articles.html">مقالات آموزشی</a></li>
+      <li><a href="contact.html">تماس با ما</a></li>
+    </ul></div>
+    <div><h4>زبان‌ها</h4><ul>
+      <li><a href="teachers.html?lang=de">آلمانی</a></li>
+      <li><a href="teachers.html?lang=en">انگلیسی</a></li>
+    </ul></div>
+    <div><h4>پنل‌ها</h4><ul>
+      <li><a href="login.html">ورود زبان‌آموز</a></li>
+      <li><a href="dashboard-teacher.html">پنل مدرس</a></li>
+      <li><a href="admin.html">پنل مدیریت</a></li>
+    </ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© ۱۴۰۴ آکادمی زبان‌لرن. تمامی حقوق محفوظ است.</span>
+    <span>نمونه طراحی UI/UX — فاز اول پروژه</span>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  const qLang = new URLSearchParams(location.search).get('lang');
+  if(qLang){ document.getElementById('fLang').value = qLang; }
+</script>
+</body>
+</html>

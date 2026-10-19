@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پنل مدیریت · آکادمی زبان‌لرن</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="index.html" class="logo"><span class="mark">زل</span> آکادمی زبان‌لرن — مدیریت</a>
+    <div class="nav-cta">
+      <a href="index.html" class="btn btn-outline btn-sm">مشاهده سایت</a>
+      <a href="admin.html" class="avatar sm">مد</a>
+    </div>
+  </div>
+</header>
+
+<div class="container section-tight dash">
+  <aside class="dash-side">
+    <div class="who"><div class="avatar md">مد</div><div><b style="font-size:14px">مدیر سیستم</b><div style="font-size:12px;color:var(--ink-faint)">دسترسی کامل</div></div></div>
+    <a href="#" class="active">📊 نمای کلی</a>
+    <a href="#teachersPanel">👩‍🏫 مدرسان</a>
+    <a href="#bookingsPanel">📅 رزروها</a>
+    <a href="#">💳 تراکنش‌های مالی</a>
+    <a href="#">📝 محتوای سایت</a>
+    <a href="#">⚙️ تنظیمات</a>
+    <a href="login.html" style="color:var(--danger)">🚪 خروج</a>
+  </aside>
+
+  <main>
+    <h1 style="font-size:22px;margin-bottom:4px">نمای کلی سیستم</h1>
+    <p style="color:var(--ink-soft);margin-bottom:24px">وضعیت کلی پلتفرم در یک نگاه.</p>
+
+    <div class="grid grid-4" style="margin-bottom:28px">
+      <div class="stat-card"><div class="label">زبان‌آموزان</div><div class="value">۱,۸۴۰</div><div class="delta">+۶۴ این هفته</div></div>
+      <div class="stat-card"><div class="label">مدرسان فعال</div><div class="value">۴۲</div><div class="delta" style="color:var(--ink-faint)">۳ درخواست همکاری جدید</div></div>
+      <div class="stat-card"><div class="label">رزروهای این هفته</div><div class="value">۲۱۶</div><div class="delta">+۱۲٪ نسبت به هفته قبل</div></div>
+      <div class="stat-card"><div class="label">گردش مالی این ماه</div><div class="value">۶۴,۳۰۰,۰۰۰</div><div class="delta">تومان</div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:28px" id="teachersPanel">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin:0;font-size:16px">مدیریت مدرسان</h3>
+        <button class="btn btn-sm btn-primary" onclick="toast('فرم افزودن مدرس باز شد')">+ افزودن مدرس</button>
+      </div>
+      <div class="table-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>نام مدرس</th><th>زبان</th><th>زبان‌آموزان</th><th>درآمد کل</th><th>وضعیت</th><th></th></tr></thead>
+          <tbody id="adminTeacherBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" id="bookingsPanel">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--border)">
+        <h3 style="margin:0;font-size:16px">آخرین رزروها</h3>
+      </div>
+      <div class="table-wrap" style="border:none;border-radius:0">
+        <table>
+          <thead><tr><th>زبان‌آموز</th><th>مدرس</th><th>تاریخ</th><th>مبلغ</th><th>وضعیت</th></tr></thead>
+          <tbody id="adminBookingBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

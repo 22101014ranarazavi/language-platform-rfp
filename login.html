@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورود / ثبت‌نام · آکادمی زبان‌لرن</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .auth-wrap{min-height:calc(100vh - 76px);display:flex;align-items:center;justify-content:center;padding:40px 20px}
+  .auth-card{width:100%;max-width:420px}
+  .tabs{display:flex;background:var(--surface-2);border-radius:999px;padding:4px;margin-bottom:24px}
+  .tabs button{flex:1;padding:10px;border:none;background:transparent;border-radius:999px;font-weight:600;font-size:14px;color:var(--ink-soft)}
+  .tabs button.active{background:var(--surface);color:var(--primary-dark);box-shadow:var(--shadow-sm)}
+  .pane{display:none}
+  .pane.active{display:block}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="index.html" class="logo"><span class="mark">زل</span> آکادمی زبان‌لرن</a>
+    <nav class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="teachers.html">مدرسان</a>
+      <a href="articles.html">مقالات</a>
+      <a href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="nav-cta"><button class="nav-toggle" onclick="toggleMobileMenu()">☰</button></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="btn btn-ghost" style="align-self:flex-end;font-size:22px" onclick="toggleMobileMenu()">✕</button>
+  <a href="index.html">خانه</a>
+  <a href="teachers.html">مدرسان</a>
+  <a href="articles.html">مقالات</a>
+  <a href="contact.html">تماس با ما</a>
+</div>
+
+<div class="auth-wrap">
+  <div class="card card-pad auth-card">
+    <div class="tabs">
+      <button id="tabLogin" class="active" onclick="switchTab('login')">ورود</button>
+      <button id="tabSignup" onclick="switchTab('signup')">ثبت‌نام زبان‌آموز</button>
+    </div>
+
+    <div id="paneLogin" class="pane active">
+      <h2 style="font-size:18px;margin-bottom:18px">ورود به حساب کاربری</h2>
+      <form onsubmit="event.preventDefault(); location.href='dashboard-student.html'">
+        <div class="field"><label>ایمیل یا شماره موبایل</label><input type="text" required></div>
+        <div class="field"><label>رمز عبور</label><input type="password" required></div>
+        <button class="btn btn-primary btn-block">ورود</button>
+      </form>
+      <p style="text-align:center;font-size:13px;color:var(--ink-faint);margin-top:16px">رمز را فراموش کرده‌اید؟ <a href="#" style="color:var(--primary)">بازیابی رمز</a></p>
+    </div>
+
+    <div id="paneSignup" class="pane">
+      <h2 style="font-size:18px;margin-bottom:18px">ایجاد حساب زبان‌آموز</h2>
+      <form onsubmit="event.preventDefault(); location.href='teachers.html'">
+        <div class="field"><label>نام و نام خانوادگی</label><input type="text" required></div>
+        <div class="field"><label>شماره موبایل</label><input type="text" required></div>
+        <div class="field"><label>رمز عبور</label><input type="password" required></div>
+        <div class="field"><label>زبان مورد نظر</label>
+          <select>
+            <option>آلمانی</option>
+            <option>انگلیسی</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block">ثبت‌نام و انتخاب مدرس</button>
+      </form>
+    </div>
+
+    <div class="divider"></div>
+    <p style="text-align:center;font-size:12.5px;color:var(--ink-faint)">مدرس هستید؟ <a href="dashboard-teacher.html" style="color:var(--primary)">ورود به پنل مدرس</a> · مدیر سیستم هستید؟ <a href="admin.html" style="color:var(--primary)">ورود به پنل مدیریت</a></p>
+  </div>
+</div>
+
+<script>
+  function switchTab(name){
+    document.getElementById('tabLogin').classList.toggle('active', name==='login');
+    document.getElementById('tabSignup').classList.toggle('active', name==='signup');
+    document.getElementById('paneLogin').classList.toggle('active', name==='login');
+    document.getElementById('paneSignup').classList.toggle('active', name==='signup');
+  }
+  function toggleMobileMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>
